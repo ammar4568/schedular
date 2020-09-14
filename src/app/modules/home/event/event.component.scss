@@ -1,0 +1,88 @@
+.icon {
+    float: right;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.blue-icon {
+    color: #0A6AE8;
+    font-size: 22px;
+}
+
+.card-body {
+    min-height: 385px;
+    padding: 0px;
+}
+
+.event-type-item,
+.booking-page-item {
+    cursor: pointer;
+}
+
+.event-type-item:hover,
+.booking-page-item:hover {
+    background: #F6F6F6
+}
+
+.booking-inline-item {
+    display: block;
+}
+
+.booking-item {
+    margin-left: 70%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.ellipsis-icon-container {
+    align-self: center;
+}
+
+.booking-item-name {
+    font-weight: bold;
+}
+
+.list-group-flush:last-child .list-group-item:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    .card-body {
+        min-height: auto;
+    }
+    .booking-col {
+        margin-top: 20px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+    .card-body {
+        min-height: auto;
+    }
+    .booking-col {
+        margin-top: 20px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+    .card-body {
+        min-height: 385px;
+    }
+    .booking-col {
+        margin-top: 0px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {}

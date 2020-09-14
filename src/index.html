@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>iClose Scheduler</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+    
+	<script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
+</head>
+
+<body>
+  <app-root></app-root>
+
+  <script>
+    window.onscroll = function () {
+      myFunction();
+    };
+
+    function myFunction() {
+      var navbar = document.getElementById("pageHeader");
+      if (navbar) {
+        var sticky = navbar.offsetTop;
+        if (window.pageYOffset > sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<div class="blue-sidebar">
+  <div class="row heading-area">
+    <div class="col">
+      <h2>Your Day</h2>
+      <small>09/10/2018</small>
+    </div>
+  </div>
+  <div class="row content-area important-area">
+    <div class="col">
+      <h4>John, This item needs your attention!</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt.
+      </p>
+      <a href="#" class="custom-btn btn-solid"> Review </a>
+      <a href="#" class="custom-btn btn-text"> Dismiss </a>
+    </div>
+  </div>
+  <div class="row content-area meetings-area">
+    <div class="col">
+      <h3>Your Meetings for this day</h3>
+      <div class="row meeting">
+        <div class="col-auto">
+          <img src="assets/images/bell-white.png" alt="Meeting" />
+        </div>
+        <div class="col-sm-auto col-7 no-padding">
+          <h5>Gil N. Crooc</h5>
+          <small> GTA, and surrounding areas </small>
+        </div>
+        <div class="col-auto meeting-time ml-auto">
+          <small>Today, 4 PM</small>
+        </div>
+      </div>
+      <div class="row meeting">
+        <div class="col-auto">
+          <img src="assets/images/bell-white.png" alt="Meeting" />
+        </div>
+        <div class="col-sm-auto col-7 no-padding">
+          <h5>Gil N. Crooc</h5>
+          <small> GTA, and surrounding areas </small>
+        </div>
+        <div class="col-auto meeting-time ml-auto">
+          <small>Today, 4 PM</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row content-area calendar-area">
+    <div class="col">
+      <h3>Upcoming Meetings</h3>
+
+      <div class="row calendar">
+        <div class="col">
+          <p-calendar [(ngModel)]="value" [inline]="true" selectionMode="multiple"></p-calendar>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-between page-header align-items-center" id="pageHeader">
+  <div class="col-6 col-sm-auto order-sm-1 order-1">
+    <h2><img src="assets/images/home.png" alt="Home" />Home</h2>
+  </div>
+  <div class="col col-sm-5 col-lg-6 search-area order-sm-2 order-3">
+    <input type="search" placeholder="Search" />
+    <div class="filter-dropdown">
+      <img src="assets/images/filter.png" alt="filter" />
+    </div>
+  </div>
+  <div class="col-6 col-sm-auto user-dropdown-area order-sm-3 order-2 text-right">
+    <ul>
+      <li>
+        <a class="nav-link notification active" href="#"><img src="assets/images/notification-icon.png" /></a>
+      </li>
+      <li><a class="nav-link username-circle" href="#">A</a></li>
+    </ul>
+  </div>
+</div>
+<div class="content-container">
+  <div class="row greetings">
+    <div class="col text-left">
+      <h1>Good morning, Admin</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor.
+      </p>
+    </div>
+  </div>
+  <div class="row main-content">
+    <div class="col-12 col-xl-5 content-box">
+      <h3>Stats</h3>
+      <small>Last 4 months</small>
+      <div class="row stats-area">
+        <div class="col-md-6 col-12">
+          <div class="white-box">
+            <h2>41,629</h2>
+            <small>Bookings made</small>
+            <img src="assets/images/blue.png" />
+            <!-- <ngx-charts-line-chart [view]="view" [scheme]="colorScheme" [results]="multi" [gradient]="gradient" [xAxis]="showXAxis"
+              [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+              [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [autoScale]="autoScale" [timeline]="timeline"
+              (select)="onSelect($event)">
+            </ngx-charts-line-chart> -->
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="white-box">
+            <h2>1,713</h2>
+            <small>Customers Booked</small>
+            <img src="assets/images/red.png" />
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="white-box">
+            <h2>$4,177</h2>
+            <small>Estimated Revenue</small>
+            <img src="assets/images/orange.png" />
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="white-box">
+            <h2>921</h2>
+            <small>New Customers</small>
+            <img src="assets/images/green.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-xl-7 content-box">
+      <h3>Recent Activity</h3>
+      <small>past 12 hours</small>
+      <div class="row activity-area">
+        <div class="col">
+          <div class="white-box">
+            <div class="row">
+              <div class="col-auto activity-icon-area scheduled"></div>
+              <div class="col-10 activity-text-area">
+                <p>
+                  You have Scheduled a meeting with
+                  <span> Victor FIlipov</span>
+                </p>
+                <small>5 hours ago</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-auto activity-icon-area cancelled"></div>
+              <div class="col-md-11 col-10 activity-text-area">
+                <p>
+                  You have Cancelled a meeting with
+                  <span> Victor FIlipov</span>
+                </p>
+                <small>3 hours ago</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-auto activity-icon-area re-scheduled"></div>
+              <div class="col-md-11 col-10  activity-text-area">
+                <p>
+                  You have Re-scheduled a meeting with
+                  <span> Victor FIlipov</span>
+                </p>
+                <small>1 hours ago</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-auto activity-icon-area template"></div>
+              <div class="col-md-11 col-10 activity-text-area">
+                <p>
+                  You have Created a new Booking Template
+                  <span>Mobile5</span>
+                </p>
+                <small>Yesterday</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-auto activity-icon-area scheduled"></div>
+              <div class="col-md-11 col-10 activity-text-area">
+                <p>
+                  You have Scheduled a meeting with
+                  <span> Victor FIlipov</span>
+                </p>
+                <small>5 hours ago</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-auto activity-icon-area cancelled"></div>
+              <div class="col-md-11 col-10 activity-text-area">
+                <p>
+                  You have Cancelled a meeting with
+                  <span> Victor FIlipov</span>
+                </p>
+                <small>3 hours ago</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-auto activity-icon-area re-scheduled"></div>
+              <div class="col-md-11 col-10 activity-text-area">
+                <p>
+                  You have Re-scheduled a meeting with
+                  <span> Victor FIlipov</span>
+                </p>
+                <small>1 hours ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row main-content">
+    <div class="col content-box">
+      <h3>Something</h3>
+      <small>Lorem Ipsum</small>
+      <div class="row">
+        <div class="col">
+          <div class="white-box">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

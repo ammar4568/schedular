@@ -1,0 +1,113 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md">
+      <h3>Configuration</h3>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-4">
+      <div class="card">
+        <div class="card-header">
+          Event types
+          <i class="fas fa-plus-circle icon blue-icon" (click)="openModal(eventModal)"></i>
+          <i class="fas fa-ellipsis-v icon mr-2"></i>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li *ngFor="let event of eventList" class="list-group-item event-type-item">
+              {{ event.publicName }}
+              <i class="fas fa-ellipsis-h icon mr-2"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-8 booking-col">
+      <div class="card">
+        <div class="card-header">
+          Booking pages
+          <i class="fas fa-plus-circle icon blue-icon" (click)="openModal(bookingModal)"></i>
+          <i class="fas fa-ellipsis-v icon mr-2"></i>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li *ngFor="let booking of bookingList" class="list-group-item booking-page-item">
+              <div class="row">
+                <div class="col-md-10 col-10">
+                  <span class="booking-inline-item booking-item-name">{{ booking.publicName }}</span>
+                  <span class="booking-inline-item">{{ booking.publicLink }}</span>
+                </div>
+                <div class="col-md-2 col-2 ellipsis-icon-container">
+                  <i class="fas fa-ellipsis-h booking-item mr-2"></i>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- New Event Modal -->
+<ng-template #eventModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New Event Type</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="eventForm">
+      <div class="form-group">
+        <label for="eventName">Public name</label>
+        <input type="text" id="eventName" class="form-control" placeholder="Enter event name"
+          formControlName="publicName" name="eventName">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="saveEvent();modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+<!-- New Booking Modal -->
+<ng-template #bookingModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New Booking Page</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="bookingForm">
+      <div class="form-group">
+        <label for="">Public name</label>
+        <input type="text" id="" class="form-control" placeholder="Enter event name" formControlName="publicName">
+      </div>
+      <div class="form-group">
+        <label for="">Internal Label</label>
+        <input type="text" id="" class="form-control" placeholder="Internal Label" formControlName="internalLabel">
+      </div>
+      <div class="form-group">
+        <label for="">Public Link</label>
+        <input type="text" id="" class="form-control" placeholder="Public Link" formControlName="publicLink">
+      </div>
+      <div class="form-group">
+        <label for="">Owner</label>
+        <input type="text" id="" class="form-control" placeholder="Enter event name" formControlName="owner">
+      </div>
+      <div class="form-group">
+        <label for="eventTypes">Event Types</label>
+        <select class="form-control" id="eventTypes" formControlName="eventType">
+          <option *ngFor="let event of eventList">{{ event.publicName }}</option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="saveBooking(); modal.close('Save click')">Save</button>
+  </div>
+</ng-template>

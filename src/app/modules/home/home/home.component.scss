@@ -1,0 +1,47 @@
+::ng-deep {
+    body .ui-datepicker table {
+        font-size: 13px
+    }
+    body .ui-datepicker {
+        background: inherit;
+        border: none;
+    }
+    body .ui-datepicker .ui-datepicker-header {
+        background: inherit;
+    }
+    body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev,
+    body .ui-datepicker .ui-datepicker-header .ui-datepicker-next {
+        color: #fff;
+    }
+    body .ui-datepicker .ui-datepicker-header .ui-datepicker-title {
+        color: #fff;
+    }
+    .ui-widget,
+    .ui-widget * {
+        color: #fff;
+    }
+    body .ui-datepicker table td>a,
+    body .ui-datepicker table td>span {
+        color: #fff;
+    }
+    body .ui-datepicker table td.ui-datepicker-today a {
+        background-color: #007bff;
+        color: #ffffff;
+        border-radius: 50%;
+        text-decoration: underline;
+    }
+    body .ui-datepicker:not(.ui-state-disabled) table td a:not(.ui-state-active):not(.ui-state-highlight):hover {
+        background-color: #007bff;
+        color: #ffffff;
+        border-radius: 50%;
+        text-decoration: underline;
+    }
+    body .ui-datepicker table td>a.ui-state-active {
+        border-radius: 50%;
+        text-decoration: underline;
+    }
+    a:not([href]):not([tabindex]):focus,
+    a:not([href]):not([tabindex]):hover {
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,36 @@
+<div class="container-fluid" [ngClass]="{'homepage-container': isHome, 'innerpage-container': !isHome}">
+  <div class="sidebar">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="logo" /> <span>{{label}}</span>
+      <span class="bold">Scheduler</span>
+    </div>
+    <div class="navigation">
+      <ul>
+        <li routerLinkActive="active">
+          <a [routerLink]="[ '/home' ]"><img src="assets/images/home.png" alt="Home" /> Home</a>
+        </li>
+        <li routerLinkActive="active" class="notification">
+          <span>3</span>
+          <a [routerLink]="[ '/activity' ]"><img src="assets/images/activity.png" alt="Activity" />
+            Activity</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="[ '/calendar' ]"><img src="assets/images/calendar.png" alt="Calendar" />
+            Calendar</a>
+        </li>
+        <li routerLinkActive="active-link">
+          <a [routerLink]="[ '/setup' ]"><img src="assets/images/setup.png" alt="Setup" /> Setup</a>
+        </li>
+        <li routerLinkActive="active-link">
+          <a href=""><img src="assets/images/share.png" alt="Share" /> Share &
+            Publish</a>
+        </li>
+        <li routerLinkActive="active-link">
+          <a href=""><img src="assets/images/reports.png" alt="Reports" />
+            Reports</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

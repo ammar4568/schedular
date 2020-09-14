@@ -1,0 +1,162 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-10 offset-1">
+            <h1 class="main-heading">Notification Template Editor</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 offset-1">
+            <div id="templatesListContainer">
+                <div class="row">
+                    <div class="col-md">
+                        <a class="customBtn" (click)="openModal(newTemplateModal)">New Template</a>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li *ngFor="let template of customTemplateList" class="list-group-item">
+                        <a href="javascript:void(0)">
+                            {{template.name}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <form action="">
+                <div class="form-group row">
+                    <div class="col-md">
+                        <input type="text" id="subject" class="form-control" placeholder="Enter Subject Here"
+                            name="subject">
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-md-12" id="editor">
+                    <ckeditor [readonly]="false" (change)="onChange($event)" (editorChange)="onEditorChange($event)"
+                        (ready)="onReady($event)" (focus)="onFocus($event)" (blur)="onBlur($event)"
+                        (contentDom)="onContentDom($event)" (fileUploadRequest)="onFileUploadRequest($event)"
+                        debounce="500" [config]="{ height: 425 }">
+                    </ckeditor>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2" id="dynamicFieldsContainer">
+            <p-accordion>
+                <p-accordionTab header="Booking data" [selected]="true">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a href="javascript:void(0)">
+                                <input id='2' type="hidden" data-propertyname=" { { MeetingDate } } " />
+                                Meeting date and time in Customer's Time Zone
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:void(0)">
+                                <input id='2' type="hidden" data-propertyname=" { { StartingDate } } " />
+                                Starting date and time
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:void(0)">
+                                <input id='2' type="hidden" data-propertyname=" { { RequestedDate } } " />
+                                Requested date and time
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:void(0)">
+                                <input id='2' type="hidden" data-propertyname=" { { Duration } } " />
+                                Duration
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:void(0)">
+                                <input id='2' type="hidden" data-propertyname=" { { BookingCalendar } } " />
+                                Booking Calender
+                            </a>
+                        </li>
+                    </ul>
+                </p-accordionTab>
+                <p-accordionTab header="Customer data">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a href="javascript:void(0)">
+                                <input id='2' type="hidden" data-propertyname=" { { CustomerName } } " />
+                                Customer Name
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:void(0)">
+                                <input id='2' type="hidden" data-propertyname=" { { CustomerEmail } } " />
+                                Customer Email
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:void(0)">
+                                <input id='2' type="hidden" data-propertyname=" { { CustomerPhone } } " />
+                                Customer Phone
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:void(0)">
+                                <input id='2' type="hidden" data-propertyname=" { { CustomerCompany } } " />
+                                Customer Company
+                            </a>
+                        </li>
+                    </ul>
+                </p-accordionTab>
+                <p-accordionTab header="Event Type Data">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a href="javascript:void(0)">
+                                <input id='2' type="hidden" data-propertyname=" { { EventName } } " />
+                                Event Type Name
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:void(0)">
+                                <input id='2' type="hidden" data-propertyname=" { { EventPrice } } " />
+                                Event Type Price
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:void(0)">
+                                <input id='2' type="hidden" data-propertyname=" { { EventCurrency } } " />
+                                Event Type Currency
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:void(0)">
+                                <input id='2' type="hidden" data-propertyname=" { { EventDescription } } " />
+                                Event Type Description
+                            </a>
+                        </li>
+                    </ul>
+                </p-accordionTab>
+            </p-accordion>
+        </div>
+    </div>
+</div>
+
+<!-- New Template Modal -->
+<ng-template #newTemplateModal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">New Template</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="templateName">Template Name</label>
+                <input type="text" id="templateName" class="form-control" placeholder="Enter template name"
+                    [(ngModel)]="templateName" name="templateName">
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark"
+            (click)="saveTemplate();modal.close('Save click')">Save</button>
+    </div>
+</ng-template>
